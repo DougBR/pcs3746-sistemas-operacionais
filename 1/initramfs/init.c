@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include "hello_world.h"
 
 int main()
 {
 	while (1) {
-		printf("Hello World\n");
+		hello_world();
 	}
 	return 0;
 }
