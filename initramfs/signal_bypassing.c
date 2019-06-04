@@ -5,7 +5,7 @@
 
 void bypass_signal(int sig_no)
 {
-  printf("divide by zero\nsignal number:%d\n", sig_no);
+  printf("Division by zero\nSignal number:%d\n", sig_no);
 }
 
 int main()
@@ -16,7 +16,7 @@ int main()
     sigaction(SIGFPE, &sa, NULL);
     while (1) {
       sleep(1);
-      printf("do nothing \n ");
+      printf("Doing nothing.\n");
     }
     return 0;
 }

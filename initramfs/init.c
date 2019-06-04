@@ -18,13 +18,13 @@ int main()
 		if (pid == -1) {
 			panic("fork");
 		} else if (pid) {
-      printf("running init process");
       while(1){
+        printf("Running init process. Sending kill signal to process %d.", pid);
         sleep(10);
         kill(pid, SIGFPE);
       }
 		} else {
-      printf("running signal handling process with PID:%d", pid);
+      printf("Running signal handling process.");
 			execve("signal_bypassing", NULL, NULL);
 		}
 
