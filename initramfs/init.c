@@ -20,9 +20,9 @@ int main()
 		panic("fork");
 	} else if (pid) {
 		while(1){
-			printf("[init] Running init process. Sending kill signal to process %d.\n", pid);
+			//printf("[init] Running init process. Sending kill signal to process %d.\n", pid);
 			sleep(10);
-			kill(pid, SIGFPE);
+			//kill(pid, SIGFPE);
 		}
 	} else {
       		printf("[init] Running signal handling process.\n");

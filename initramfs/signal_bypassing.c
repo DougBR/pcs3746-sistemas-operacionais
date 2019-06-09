@@ -14,9 +14,11 @@ int main()
     memset(&sa, 0, sizeof(sa));
     sa.sa_handler = &bypass_signal;
     sigaction(SIGFPE, &sa, NULL);
+    int i = 0;
     while (1) {
       sleep(1);
-      printf("[chil] Doing nothing.\n");
+      printf("[chil] Doing nothing %d.\n", ++i);
+      10/(i % 5 != 0);
     }
     return 0;
 }
