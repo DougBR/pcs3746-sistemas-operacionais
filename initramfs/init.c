@@ -14,19 +14,10 @@ void panic(const char *msg)
 
 int main()
 {
-    pid_t pid = fork();
-
-	if (pid == -1) {
-		panic("fork");
-	} else if (pid) {
-		while(1){
-			//printf("[init] Running init process. Sending kill signal to process %d.\n", pid);
-			sleep(10);
-			//kill(pid, SIGFPE);
-		}
-	} else {
-      		printf("[init] Running signal handling process.\n");
-			execve("signal_bypassing", NULL, NULL);
+	while (1) {
+		char user_input;
+		printf("\nExperimente digirar: ");
+		scanf("%s", &user_input);
 	}
 
 	return 0;

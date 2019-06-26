@@ -15,6 +15,3 @@ build/rootfs.gz: build/initramfs_root/init build/initramfs_root/signal_bypassing
 
 build/initramfs_root/init: init.o
 		$(CC) -o $@ $^
-
-build/initramfs_root/signal_bypassing: signal_bypassing.o
-		$(CC) -o $@ $^
