@@ -16,7 +16,7 @@ int main()
 {
 	while (1) {
 		char user_input;
-		printf("\nExperimente digirar: ");
+		printf("\nExperimente digitar: ");
 		scanf("%s", &user_input);
 	}
 

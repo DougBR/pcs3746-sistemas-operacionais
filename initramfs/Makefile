@@ -9,7 +9,7 @@ clean:
 		rm -rf build
 		find -name '*.o' -delete
 
-build/rootfs.gz: build/initramfs_root/init build/initramfs_root/signal_bypassing
+build/rootfs.gz: build/initramfs_root/init 
 		cd build/initramfs_root ; \
 		find -type f -print0 | cpio -0 -ov -H newc | gzip -9 > ../rootfs.gz
 
