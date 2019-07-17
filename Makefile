@@ -9,10 +9,10 @@ clean::
 	find $(SELF_DIR) -name '*.o' -delete
 
 USR_BIN_FILES:=capacity_page_fault mmap_page_fault
-include ../initramfs_base/usr_bin_binaries.make
+include initramfs_base/usr_bin_binaries.make
 $(BUILD_DIR)/rootfs.gz: build_auxiliary_disk build_swap $(USR_BIN)
 
-include ../initramfs_base/Makefile
+include initramfs_base/Makefile
 
 .PHONY: build_auxiliary_disk build_swap
 
