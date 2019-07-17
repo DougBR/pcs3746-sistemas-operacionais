@@ -2,6 +2,6 @@
 docker run -ti --rm \
     -v "$PWD/linux":/home/student/src/linux \
     -v "$PWD":/home/student/src/initramfs \
-    -v "$PWD/../initramfs_base":/home/student/src/initramfs_base \
+    -v "$PWD/initramfs_base":/home/student/src/initramfs_base \
     -v "$PWD/docker_cmd.sh":/default_cmd.sh \
     tiagoshibata/pcs3746
