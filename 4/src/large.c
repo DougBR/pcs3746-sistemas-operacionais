@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 700000
 
 double big_array[ARRAY_SIZE];
 
@@ -13,10 +13,11 @@ int main()
 
 	for (int i=0; i<ARRAY_SIZE; i++) {
 		big_array[i] = (double)(i + 0.125);
+        if (i % 1000 == 0)
+            getchar();
 	}
 
 
 	printf("large finished\n");
-	getchar();
 	return 0;
 }
