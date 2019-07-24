@@ -3,20 +3,24 @@
 #include <string.h>
 #include <unistd.h>
 
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 8*1024*1024/(3*sizeof(double))
 
 double big_array[ARRAY_SIZE];
 
 int main()
 {
+	int i = 0;
 	printf("large starting\n");
 
-	for (int i=0; i<ARRAY_SIZE; i++) {
-		big_array[i] = (double)(i + 0.125);
+	while(1){
+		big_array[i++] = (double) i*1.125;
+		if (i == 1000)
+			getchar();
+		else if (i == ARRAY_SIZE)
+			i = 0;
 	}
 
-
 	printf("large finished\n");
-	getchar();
+	
 	return 0;
 }
