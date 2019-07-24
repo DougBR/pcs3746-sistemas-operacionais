@@ -14,13 +14,12 @@ int main()
 
 	while(1){
 		big_array[i++] = (double) i*1.125;
-		if (i == 1000)
+		if (i%1000 == 0)
 			getchar();
 		else if (i == ARRAY_SIZE)
 			i = 0;
 	}
 
 	printf("large finished\n");
-	
 	return 0;
 }
