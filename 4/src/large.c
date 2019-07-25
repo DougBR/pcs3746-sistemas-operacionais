@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define ARRAY_SIZE (16 * 1024 * 1024) / 3
+#define ARRAY_SIZE (32 * 1024 * 1024) / 3
 
 char big_array[ARRAY_SIZE];
 int lower = 32;
