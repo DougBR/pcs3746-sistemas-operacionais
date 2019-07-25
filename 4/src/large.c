@@ -3,21 +3,22 @@
 #include <string.h>
 #include <unistd.h>
 
-#define ARRAY_SIZE 8*1024*1024/(3*sizeof(double))
+#define ARRAY_SIZE (16 * 1024 * 1024) / 3
 
-double big_array[ARRAY_SIZE];
+char big_array[ARRAY_SIZE];
+int lower = 32;
+int upper = 126;
 
 int main()
 {
-	int i = 0;
 	printf("large starting\n");
 
-	while(1){
-		big_array[i++] = (double) i*1.125;
-		if (i%1000 == 0)
-			getchar();
-		else if (i == ARRAY_SIZE)
-			i = 0;
+	while (1) {
+		for (int i=0; i<ARRAY_SIZE; i++) {
+			big_array[i] = (char) ((rand() % (upper - lower + 1)) + lower);
+			if (i % 1000 == 0)
+				getchar();
+		}
 	}
 
 	printf("large finished\n");
